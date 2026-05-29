@@ -18,6 +18,11 @@ private:
     std::array<uint8_t, 16> V; // 16 general purpose registers
     std::array<uint16_t, 16> keypad; // Hexadecimal keypad (0-F)
 
+public:
+    void LoadROM(const char* filename); // Load a Rom file into memory
+    void cycle(); // Emulate one cycle of the Chip-8 CPU
+    void init(); // Initialize the Chip-8 system (reset memory, registers, etc.)
+
 };
 
 #endif // CHIP8_H
